@@ -21,6 +21,7 @@ const App: React.FC = () => {
       }
       contributions.push(week);
     }
+    
 
     return contributions;
   };
@@ -34,6 +35,21 @@ const App: React.FC = () => {
 
   const daysOfWeek = ['Seg', 'Qua', 'Sex', 'Dom'];
   const uniqueMonths = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'];
+
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -150, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 150, behavior: 'smooth' });
+    }
+  };
+  
 
   return (
     <div className="home-container">
@@ -53,21 +69,39 @@ const App: React.FC = () => {
       </header>
 
       <main className="main-content">
-        {/* Baralho principal */}
         <div className="flashcard-container">
+          <div className='top-name-flashcards'>
+            <img src="/src/assets/mdi_cards.svg" alt="mdi_cards" />
+            <h1>Baralho</h1>
+          </div>
           <div className="card-stack">
+            <div className="card smaller-card01"></div>
             <div className="card main-card">
+              <img src="/src/assets/gear.svg" alt="gear" />
               <h2>Java</h2>
               <p>20 cartões</p>
-              <button>Estudar</button>
+              <button className='study-btn'>Estudar</button>
             </div>
-            <div className="card smaller-card"></div>
-            <div className="card smaller-card"></div>
+            <div className="card smaller-card02"></div>
           </div>
-          <div className="flashcard-slider">
-            <button>Javascript</button>
-            <button>Nodejs</button>
-            <button>Springboot</button>
+          <div className='slider'>
+            <p>Ver tudo <img src="/src/assets/arrow.svg" alt="arrow-see" /></p>
+            <div className="flashcard-slider-container">
+              <button className='arrow-left' onClick={scrollLeft}>
+                <img src="/src/assets/arrow.svg" alt="arrow-left" />
+              </button>
+              <div className="flashcard-slider" ref={scrollRef}>
+                <button>Javascript</button>
+                <button>Nodejs</button>
+                <button>Springboot</button>
+                <button>Flutter</button>
+                <button>React</button>
+                <button>Vue.js</button>
+              </div>
+              <button className='arrow-right' onClick={scrollRight}>
+                <img src="/src/assets/arrow.svg" alt="arrow-right" />
+              </button>
+            </div>
           </div>
           <button className="new-deck-button">Novo baralho</button>
         </div>
