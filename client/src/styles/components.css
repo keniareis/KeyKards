@@ -226,9 +226,8 @@ body, html {
   padding: 0%;
   header{
     background-color: #270034;
-    position: absolute;
+    position: relative;
     padding: 5px;
-    position: absolute;
 
     .name-logo{
       font-size: 12px;
@@ -294,16 +293,22 @@ body, html {
     display: flex;
     flex-direction: column;
     align-self:center;
-    margin-left: 130px;
+    
 
     .top-name-flashcards{
       display: flex;
       flex-direction: row;
-      font-size: 12px;
-      font-weight: lighter;
+      font-size: 10px;
+      margin-bottom: -20px;
+      margin-top: 20px;
+
+      h1{
+        font-weight: 500;
+      }
 
       img{
         margin-right: 5px;
+        width: 30px;
       }
     }
 
@@ -324,7 +329,9 @@ body, html {
         img{
           display: flex;
           flex-direction: row;
-          margin-left: 180px;
+          margin-left: 190px;
+          width: 25px;
+          cursor: pointer;
         }
 
         h2{
@@ -471,8 +478,13 @@ body, html {
       font-size: 20px;
       color: white;
       background-color: #9F00AD;
-      width: 200px;
+      width: 180px;
       height: 50px;
+      transition: 0.3s;
+    }
+
+    .new-deck-button:hover{
+      background-color: #AD4AC9;
     }
     
   }
