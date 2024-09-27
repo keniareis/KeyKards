@@ -1,5 +1,5 @@
 import React from 'react';
-import Flashcard from '../components/flashcard';
+import Flashcard from '../components/Flashcard';
 
 const Flashcards: React.FC = () => {
   const flashcards = [

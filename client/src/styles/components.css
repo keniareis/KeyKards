@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: #14001E;
 }
 
 /* Container geral da tela de login */
@@ -158,4 +159,493 @@ body, html {
     }
 
 
+/* CustomCalendar.css */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.calendar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.month {
+  color: #bb86fc;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.days-of-week {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.day-name {
+  color: #bb86fc;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+}
+
+.day {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  border-radius: 3px;
+  transition: transform 0.2s;
+}
+
+.day:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.home-container{
+  padding: 0%;
+  position: relative;
+  header{
+    background-color: #270034;
+    position: relative;
+    padding: 5px;
+
+    .name-logo{
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+      height: 45px;
+      align-items: center;
+      background-image: linear-gradient(to right, rebeccapurple, #C900DB, #6D0075);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      img {
+        height: 40px;
+        width: 50px;
+        margin-right: 10px;
+        margin-left: 20px;
+      }
+    }
+
+    .search-bar{
+      margin-top: 5px;
+      align-items: center;
+      align-self: center;
+      height: 35px;
+      width: 600px;
+      background-color: #14001E;
+    }
+
+    .nav-icons{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 10px;
+
+      button{
+        align-items: center;
+        flex-direction: row;
+        display: flex;
+        font-size: 16px;
+      }
+      
+      img{
+        margin-right: 5px;
+        height: 24px;
+        width: 25px;
+        align-self: center;
+      }
+      img[alt="person"] {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .main-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+
+  .flashcard-container{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    margin-left: 10px;
+
+    .top-name-flashcards{
+      display: flex;
+      flex-direction: row;
+      font-size: 10px;
+      margin-bottom: -20px;
+      margin-top: 20px;
+
+      h1{
+        font-weight: 500;
+      }
+
+      img{
+        margin-right: 5px;
+        width: 30px;
+      }
+    }
+
+    .card-stack{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+
+      .card.main-card{
+        align-self: center;
+        width: 250px;
+        height: 320px;
+        background-color: #4B0049;
+        position: relative;
+        z-index: 2;
+
+        img{
+          display: flex;
+          flex-direction: row;
+          margin-left: 190px;
+          width: 25px;
+          cursor: pointer;
+        }
+
+        h2{
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+
+        p{
+          justify-content: center;
+          margin-top: 0;
+          font-size: 16px;
+          background-color: #6D0075;
+          border-radius: 15px;
+          padding: 5px;
+          width: 110px;
+          align-items: center;
+          margin-left: 50px;
+          align-content: center ;
+        }
+
+        .study-btn{
+          border: none;
+          background-color: #9F00AD;
+          border-radius: 10px;
+          color: white;
+          width: 150px;
+          height: 40px;
+          font-size: 20px;
+          margin-top: 100px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .study-btn:hover{
+          background-color: #AD4AC9;
+        }
+
+      }
+
+      .card.smaller-card01{
+        background-color: #4D005F;
+        top: 15px;
+        left: 190px;
+        z-index: 1;
+        position: relative;
+        width: 250px;
+        height: 280px;
+        transform: rotate(-11deg);     
+      }
+      
+      .card.smaller-card02{
+        top: 15px;
+        right: 190px;
+        z-index: 1;
+        position: relative;
+        width: 250px;
+        height: 280px;
+        background-color: #AD4AC9;   
+        transform: rotate(11deg);     
+      }   
+    }
+
+    .slider {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    p {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 15px;
+      margin-bottom: -15px;
+      align-self: flex-end;
+      margin-right: 50px;
+      cursor: pointer;
+    }
+    
+    p img {
+      margin-left: 5px;
+      height: 14px;
+    }
+    
+    .flashcard-slider-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 20px;
+      width: 720px; 
+    }
+    
+    .flashcard-slider {
+      margin-left: 15px;
+      margin-right: 15px;
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll; 
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .flashcard-slider::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .flashcard-slider button {
+      padding: 0;
+      margin-left: 5px;
+      margin-right: 5px;
+      height: 130px;
+      width: 130px;
+      background-color: #4B0049;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: medium;
+      font-weight: 500;
+      flex-shrink: 0;
+      
+    }
+    
+    .arrow-right, .arrow-left {
+      background-color: transparent;
+      width: 30px;
+      height: 30px;
+      border: none;
+    }
+    
+    .arrow-left {
+      transform: rotate(180deg);
+    }
+    
+    .flashcard-slider-container .arrow-left, .flashcard-slider-container .arrow-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 130px; 
+    }
+
+    .flashcard-slider-container button {
+      cursor: pointer;
+    }
+
+    .new-deck-button{
+      margin-top: 30px;
+      font-size: 20px;
+      color: white;
+      background-color: #9F00AD;
+      width: 180px;
+      height: 50px;
+      transition: 0.3s;
+    }
+
+    .new-deck-button:hover{
+      background-color: #AD4AC9;
+    }
+    
+  }
+
   
+  .daily-offensive{
+    display: flex;
+    flex-direction: column;
+
+    .offensive-name{
+      display: flex;
+      font-size: 20px;
+      margin-bottom: -20px;
+
+      img{
+        width: 30px;
+        margin-right: 5px;
+        margin-bottom: 7px;
+      }
+    }
+
+    .offensive-container {
+      background-color: transparent;
+      border: solid 1px #770073;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-bottom: 40px;
+    
+      width: 630px;
+      height: 210px; 
+      overflow: hidden; 
+    
+      .calendar-header {
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        width: 565px;
+        margin-left: 25px;
+    
+        .month {
+          color: white;
+        }
+      }
+    
+      .calendar {
+        .days-of-week {
+          margin: 0 -5px;
+          font-size: 12px;
+          justify-content: space-between;
+    
+          .day-name {
+            color: white;
+          }
+        }
+    
+        .week {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+        }
+    
+        .day {
+          width: 20px;
+          height: 20px;
+          background-color: #ccc;
+          border-radius: 4px;
+          margin: 2px;
+        }
+      }
+    }
+    .today-info{
+      display: flex;
+      flex-direction: column;
+
+      .today-name{
+        display: flex;
+        font-size: 20px;
+        h2{
+          margin: 10px 0;
+        }
+
+        img{
+          margin-right: 10px;
+        }
+      }
+
+      .today-container {
+        background-color: transparent;
+        border: solid 1px #770073;
+        border-radius: 20px;
+        padding: 0 20px;
+        
+        .first-column {
+          display: flex;
+          flex-direction: column;
+          
+          .info-first-column {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 2px solid #770073;
+            font-size: 20px;
+            
+            p.value{
+              color: #C943FF;
+            }
+          }
+        }
+        
+        .second-column {
+          display: flex;
+          flex-wrap: wrap; /* Para permitir que os elementos fiquem em duas colunas */
+          font-size: 20px;
+          
+          .second-column-parts {
+            flex: 1 ; /* O flex aqui define que cada parte ocupará 50% do espaço */
+            display: flex;
+            flex-direction: column;
+            
+            .info-second-column01, .info-second-column02 {
+              display: flex;
+              justify-content: space-between;
+              margin: 10px 0px 0 10px;
+              
+              p.name {
+                margin-right: 150px;
+              }
+
+              p.value{
+                color: #C943FF;
+              }
+            }
+            
+            .info-second-column01{
+              border-right: 2px solid #770073;
+              padding-right: 30px; /* Espaçamento antes da borda direita */
+            }
+            
+            .info-second-column02 {
+              padding-left: 20px; /* Espaçamento depois da borda direita */
+              padding-right: 20px; /* Espaçamento antes da borda direita */
+            }
+            
+            #first.info-second-column01{
+              border-bottom: 2px solid #770073;
+
+            }
+
+            #second.info-second-column02{
+              border-bottom: 2px solid #770073;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}

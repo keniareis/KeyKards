@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1E001E;
+  color: #fff;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.search-bar {
+  background-color: #3B003B;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+  color: #fff;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-stack {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  background-color: #520052;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.main-card {
+  width: 150px;
+  height: 200px;
+}
+
+.smaller-card {
+  width: 100px;
+  height: 150px;
+  background-color: #8D00AD;
+}
+
+.flashcard-slider {
+  display: flex;
+  gap: 10px;
+}
+
+.new-deck-button {
+  background-color: #8D00AD;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.offensive-container, .today-container {
+  background-color: #520052;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.week {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.days-of-week {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-name {
+  color: #ddd;
+}
