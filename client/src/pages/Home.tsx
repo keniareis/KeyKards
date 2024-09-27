@@ -49,7 +49,6 @@ const App: React.FC = () => {
       scrollRef.current.scrollBy({ left: 150, behavior: 'smooth' });
     }
   };
-  
 
   return (
     <div className="home-container">
