@@ -2,28 +2,40 @@ import React, { useState } from 'react';
 import Flashcard from '../components/Flashcard';
 
 const Flashcards: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Estado para controlar qual flashcard está sendo exibido
   const [isFlipped, setIsFlipped] = useState(false); // Estado para controlar se a carta foi virada
 
   const flashcards = [
-    { title: 'O que é programação', },
+    { title: 'O que é programação?', description: 'É o processo de escrever e manter o código-fonte de um programa de computador.' },
+    { title: 'O que é um algoritmo?', description: 'É uma sequência de passos finitos para resolver um problema.' },
     // Adicione mais flashcards conforme necessário
-  ]; 
+  ];
 
   // Função para lidar com o clique no botão de virar carta
   const handleFlip = () => {
-    setIsFlipped(true);
+    setIsFlipped(true); // Vira a carta
   };
 
-  // Função para lidar com a pesquisa de flashcards
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+  // Função para avançar para o próximo flashcard
+  const handleNextCard = () => {
+    setIsFlipped(false); // Desvira a carta ao avançar para o próximo
+    if (currentCardIndex < flashcards.length - 1) {
+      setCurrentCardIndex(currentCardIndex + 1);
+    }
   };
 
-  // Filtrando flashcards com base no termo de pesquisa
-  const filteredFlashcards = flashcards.filter((card) =>
-    card.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Função para voltar ao flashcard anterior
+  const handlePreviousCard = () => {
+    setIsFlipped(false); // Desvira a carta ao voltar
+    if (currentCardIndex > 0) {
+      setCurrentCardIndex(currentCardIndex - 1);
+    }
+  };
+
+  // Função para lidar com o clique nos botões de dificuldade
+  const handleDifficultyClick = () => {
+    handleNextCard(); // Avança para o próximo flashcard quando qualquer botão de dificuldade for clicado
+  };
 
   return (
     <div className="flashcards-container">
@@ -31,16 +43,6 @@ const Flashcards: React.FC = () => {
         <div className="name-logo">
           <img src="/src/assets/logo.svg" alt="logo" />
           <h1>KeyKards</h1>
-        </div>
-
-        <div>
-          <input
-            type="text"
-            placeholder="Pesquise seus flashcards"
-            className="search-bar"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
         </div>
 
         <div className="nav-icons">
@@ -58,19 +60,21 @@ const Flashcards: React.FC = () => {
 
       <div className="container-deck">
         <div className="back-button">
-          <button><img src="/src/assets/arrow-back.svg" alt="" /></button>
+          <button onClick={handlePreviousCard} disabled={currentCardIndex === 0}>
+            <img src="/src/assets/arrow-back.svg" alt="" />
+          </button>
         </div>
 
         <div className="card">
-          {filteredFlashcards.length > 0 ? (
-            filteredFlashcards.map((card, index) => (
-              <Flashcard key={index} title={card.title} description={card.description} />
-            ))
+          {/* Exibe o título se a carta não estiver virada, senão exibe a descrição */}
+          {!isFlipped ? (
+            <Flashcard title={flashcards[currentCardIndex].title} />
           ) : (
-            <p>Nenhum flashcard encontrado</p>
+            <Flashcard description={flashcards[currentCardIndex].description} />
           )}
         </div>
 
+        {/* Botão de virar a carta, só aparece enquanto a carta não estiver virada */}
         {!isFlipped ? (
           <div className="flip-button">
             <button className="difficulty" onClick={handleFlip}>
@@ -79,10 +83,18 @@ const Flashcards: React.FC = () => {
           </div>
         ) : (
           <div className="difficulty-buttons">
-            <button className="difficulty">Muito difícil</button>
-            <button className="difficulty">Difícil</button>
-            <button className="difficulty">Médio</button>
-            <button className="difficulty">Fácil</button>
+            <button className="difficulty" onClick={handleDifficultyClick}>
+              Muito difícil
+            </button>
+            <button className="difficulty" onClick={handleDifficultyClick}>
+              Difícil
+            </button>
+            <button className="difficulty" onClick={handleDifficultyClick}>
+              Médio
+            </button>
+            <button className="difficulty" onClick={handleDifficultyClick}>
+              Fácil
+            </button>
           </div>
         )}
       </div>
