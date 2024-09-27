@@ -26,7 +26,7 @@ const App: React.FC = () => {
     return contributions;
   };
 
-  const contributions = generateContributions(20);
+  const contributions = generateContributions(17);
 
   const getColor = (count: number) => {
     if (count === 0) return '#4B0049';
@@ -108,14 +108,17 @@ const App: React.FC = () => {
 
         {/* Seção Ofensiva */}
         <div className='daily-offensive'>
-          <div className="offensive-container">
+          <div className='offensive-name'>
+            <img src="/src/assets/fire.svg" alt="offensive-fire"/>
             <h2>Ofensiva</h2>
-            <div className="calendar">
+          </div>
+          <div className="offensive-container">
               <div className="calendar-header">
                 {uniqueMonths.map((month, index) => (
                   <div key={index} className="month">{month}</div>
                 ))}
               </div>
+            <div className="calendar">
               <div className="days-of-week">
                 {daysOfWeek.map((day, index) => (
                   <div key={index} className="day-name">{day}</div>
@@ -137,14 +140,45 @@ const App: React.FC = () => {
           </div>
 
           {/* Seção Hoje */}
-          <div className="today-container">
-            <h2>Hoje</h2>
-            <p>Estudados: 30 Cartões</p>
-            <p>Tempo gasto: 10 min (15s/cartão)</p>
-            <p>Revisados: 19</p>
-            <p>Aprendidos: 8</p>
-            <p>Reaprendidos: 3</p>
-            <p>Filtrados: 0</p>
+          <div className='today-info'>
+            <div className='today-name'>
+              <img src="/src/assets/stats.svg" alt="" />
+              <h2>Hoje</h2>
+            </div>
+            <div className="today-container">
+              <div className='first-column'>
+                <div className='info-first-column'>
+                  <p>Estudados:</p>
+                  <p className='value'>30 Cartões</p>
+                </div>
+                <div className='info-first-column'>
+                  <p>Tempo gasto:</p>
+                  <p className='value'>10 min (15s/cartão)</p>
+                </div>
+              </div>
+              <div className='second-column'>
+                <div className='second-column-parts'>
+                  <div className='info-second-column01' id='first'>
+                    <p>Revisados:</p>
+                    <p className='value'>19</p>
+                  </div>
+                  <div className='info-second-column01'>
+                    <p>Aprendidos:</p>
+                    <p  className='value'>8</p>
+                  </div>
+                </div>
+                <div className='second-column-parts'>
+                  <div className='info-second-column02' id='second'>
+                    <p>Reaprendidos:</p>
+                    <p className='value'>3</p>
+                  </div>
+                  <div className='info-second-column02'>
+                    <p>Filtrados:</p>
+                    <p className='value'>0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
