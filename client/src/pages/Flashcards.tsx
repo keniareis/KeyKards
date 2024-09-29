@@ -38,7 +38,7 @@ const Flashcards: React.FC = () => {
   };
 
   return (
-    <div className="flashcards-container">
+    <div className="flashcards-container-flash">
       <header className="header">
         <div className="name-logo">
           <img src="/src/assets/logo.svg" alt="logo" />
@@ -58,14 +58,14 @@ const Flashcards: React.FC = () => {
         </div>
       </header>
 
-      <div className="container-deck">
+      <div className="container-deck-flash">
         <div className="back-button">
           <button onClick={handlePreviousCard} disabled={currentCardIndex === 0}>
             <img src="/src/assets/arrow-back.svg" alt="" />
           </button>
         </div>
 
-        <div className="card">
+        <div className="card-flash">
           {/* Exibe o título se a carta não estiver virada, senão exibe a descrição */}
           {!isFlipped ? (
             <Flashcard title={flashcards[currentCardIndex].title} />

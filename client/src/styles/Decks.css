@@ -91,7 +91,7 @@
             img{
                 display: flex;
                 flex-direction: row;
-                margin-left: 210px;
+                margin-left: 230px;
                 width: 30px;
                 cursor: pointer;
                 margin-bottom: 20px;
@@ -111,18 +111,19 @@
                 padding: 5px;
                 width: 110px;
                 margin: 0;
-                margin-right: px;
+                margin-left: 75px;
             }
-
+            
             .study-btn{
+                margin-left: 55px;
                 border: none;
                 background-color: #9F00AD;
                 border-radius: 10px;
                 color: white;
-                width: 170px;
+                width: 150px;
                 height: 40px;
                 font-size: 20px;
-                margin-top: 150px;
+                margin-top: 120px;
                 cursor: pointer;
                 transition: 0.3s;
             }
