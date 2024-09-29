@@ -14,20 +14,20 @@ const Card: React.FC = () => {
   return (
     <div className="cards-container">
         <header className="header">
-        <div className='name-logo'>
-            <img src="/src/assets/logo.svg" alt="logo" />
-            <h1>KeyKards</h1>
-        </div>
-        <div>
-          <input type="text" placeholder="Pesquise seus flashcards" className="search-bar" />
-        </div>
-        <div className="nav-icons">
-          <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
-          <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
-          <button><img src="/src/assets/person.svg" alt="person" /></button>
-        </div>
-      </header>
-      <div className="back-button">
+            <div className='name-logo'>
+                <img src="/src/assets/logo.svg" alt="logo" />
+                <h1>KeyKards</h1>
+            </div>
+            <div>
+                <input type="text" placeholder="Pesquise seus flashcards" className="search-bar" />
+            </div>
+            <div className="nav-icons">
+                <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
+                <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
+                <button><img src="/src/assets/person.svg" alt="person" /></button>
+            </div>
+        </header>
+        <div className="back-button">
           <button>
             <img src="/src/assets/arrow-back.svg" alt="" />
           </button>

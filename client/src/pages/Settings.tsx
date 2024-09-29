@@ -1,22 +1,65 @@
-import React, { useState } from 'react';
+import React from 'react';
+import '/src/styles/Settings.css';
+import { FaPen } from 'react-icons/fa'; // Ícone de lápis para edição
 
 const Settings: React.FC = () => {
-  const [email, setEmail] = useState('usuario@exemplo.com');
-
-  const handleSave = () => {
-    // lógica de salvar configurações
-    console.log('Configurações salvas');
-  };
-
   return (
-    <div className="settings-container">
-      <h1>Configurações</h1>
-      <input 
-        type="email" 
-        value={email} 
-        onChange={(e) => setEmail(e.target.value)} 
-      />
-      <button onClick={handleSave}>Salvar</button>
+    <div className="user-settings-container">
+      <header className="header">
+        <div className='name-logo'>
+            <img src="/src/assets/logo.svg" alt="logo" />
+            <h1>KeyKards</h1>
+        </div>
+        <div>
+          <input type="text" placeholder="Pesquise seus flashcards" className="search-bar" />
+        </div>
+        <div className="nav-icons">
+          <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
+          <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
+          <button><img src="/src/assets/person.svg" alt="person" /></button>
+        </div>
+      </header>
+      <div className="back-button">
+        <button>
+          <img src="/src/assets/arrow-back.svg" alt="" />
+        </button>
+      </div>
+      <div className="user-settings-card">
+        <div className="input-group">
+          <label>Nome de usuário</label>
+          <div className="input-field">
+            <span>Kenia Reis</span>
+            <FaPen className="edit-icon" />
+          </div>
+        </div>
+        <hr />
+
+        <div className="input-group">
+          <label>Email</label>
+          <div className="input-field">
+            <span>Keniareis@gmail.com</span>
+            <FaPen className="edit-icon" />
+          </div>
+        </div>
+        <hr />
+
+        <div className="input-group">
+          <label>Senha</label>
+          <div className="input-field">
+            <span>**************</span>
+            <FaPen className="edit-icon" />
+          </div>
+        </div>
+        <hr />
+        
+        <div className="delete-account-section">
+          <div className='delete-account-name'>
+            <span>Apagar sua conta</span>
+            <p>Isso apagará seus dados para sempre</p>
+          </div>
+            <button className="delete-account-btn">Apagar conta</button>
+          </div>
+      </div>
     </div>
   );
 };
