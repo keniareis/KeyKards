@@ -11,6 +11,13 @@ const Card: React.FC = () => {
     console.log('Adicionando cartão:', { deckName, frontText, backText });
   };
 
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Função para alternar o dropdown
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  }
+
   return (
     <div className="cards-container">
         <header className="header">
@@ -24,7 +31,22 @@ const Card: React.FC = () => {
             <div className="nav-icons">
                 <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
                 <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
-                <button><img src="/src/assets/person.svg" alt="person" /></button>
+                <button onClick={toggleDropdown}>
+                    <img src="/src/assets/person.svg" alt="person" />
+                </button>
+                {showDropdown && (
+                    <div className="dropdown">
+                    <div className="dropdown-item">
+                        <img src="/src/assets/gear.svg" alt="config" />
+                        <span>Configurações</span>
+                    </div>
+                    <hr className='hr-dropdown'/>
+                    <div className="dropdown-item">
+                        <img src="/src/assets/out.svg" alt="logout" />
+                        <span>Sair</span>
+                    </div>
+                </div>
+            )}
             </div>
         </header>
         <div className="back-button">

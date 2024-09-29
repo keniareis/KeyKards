@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState} from 'react';
 import '/src/styles/Settings.css';
 import { FaPen } from 'react-icons/fa'; // Ícone de lápis para edição
 
 const Settings: React.FC = () => {
+
+  
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Função para alternar o dropdown
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  }
+
   return (
     <div className="user-settings-container">
       <header className="header">
         <div className='name-logo'>
-            <img src="/src/assets/logo.svg" alt="logo" />
-            <h1>KeyKards</h1>
+          <img src="/src/assets/logo.svg" alt="logo" />
+          <h1>KeyKards</h1>
         </div>
         <div>
           <input type="text" placeholder="Pesquise seus flashcards" className="search-bar" />
@@ -16,7 +25,23 @@ const Settings: React.FC = () => {
         <div className="nav-icons">
           <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
           <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
-          <button><img src="/src/assets/person.svg" alt="person" /></button>
+          <button onClick={toggleDropdown}>
+            <img src="/src/assets/person.svg" alt="person" />
+          </button>
+
+          {showDropdown && (
+            <div className="dropdown">
+              <div className="dropdown-item">
+                <img src="/src/assets/gear.svg" alt="config" />
+                <span>Configurações</span>
+              </div>
+              <hr className='hr-dropdown'/>
+              <div className="dropdown-item">
+                <img src="/src/assets/out.svg" alt="logout" />
+                <span>Sair</span>
+              </div>
+            </div>
+          )}
         </div>
       </header>
       <div className="back-button">
@@ -51,7 +76,7 @@ const Settings: React.FC = () => {
           </div>
         </div>
         <hr />
-        
+
         <div className="delete-account-section">
           <div className='delete-account-name'>
             <span>Apagar sua conta</span>
