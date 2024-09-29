@@ -6,6 +6,7 @@ import Flashcards from './pages/Flashcards';
 import Settings from './pages/Settings';
 import Home from './pages/Home';
 import Decks from './pages/Decks';
+import Card from './pages/Card';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/flashcards" element={<Flashcards />} />
         <Route path="/decks" element={<Decks/>} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/card" element={<Card />} />
       </Routes>
     </Router>
   );

@@ -58,7 +58,7 @@ const Flashcards: React.FC = () => {
         </div>
       </header>
 
-      <div className="container-deck-flash">
+      <div className="container-deck">
         <div className="back-button">
           <button onClick={handlePreviousCard} disabled={currentCardIndex === 0}>
             <img src="/src/assets/arrow-back.svg" alt="" />
