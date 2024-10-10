@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Home.css';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const App: React.FC = () => {
+  const navigate = useNavigate();
   const generateContributions = (weeks: number) => {
     const contributions = [];
     const today = new Date();
     const currentDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
 
     for (let i = 0; i < weeks; i++) {
       const week = [];
@@ -50,45 +54,9 @@ const App: React.FC = () => {
     }
   };
 
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  // Função para alternar o dropdown
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  }
   return (
     <div className="home-container">
-      <header className="header">
-      <div className='name-logo'>
-        <img src="/src/assets/logo.svg" alt="logo" />
-        <h1>KeyKards</h1>
-      </div>
-      <div>
-        <input type="text" placeholder="Pesquise seus flashcards" className="search-bar" />
-      </div>
-      <div className="nav-icons">
-        <button><img src="/src/assets/home.svg" alt="HomeIcon"/>Home</button>
-        <button><img src="/src/assets/baralho.svg" alt="baralhoIcon" />Baralhos</button>
-        <button onClick={toggleDropdown}>
-          <img src="/src/assets/person.svg" alt="person" />
-        </button>
-
-        {showDropdown && (
-          <div className="dropdown">
-            <div className="dropdown-item">
-              <img src="/src/assets/gear.svg" alt="config" />
-              <span>Configurações</span>
-            </div>
-            <hr />
-            <div className="dropdown-item">
-              <img src="/src/assets/out.svg" alt="logout" />
-              <span>Sair</span>
-            </div>
-          </div>
-        )}
-      </div>
-    </header>
-
+      <Navbar/>
       <main className="main-content">
         <div className="flashcard-container">
           <div className='top-name-flashcards'>
@@ -98,33 +66,33 @@ const App: React.FC = () => {
           <div className="card-stack">
             <div className="card smaller-card01"></div>
             <div className="card main-card">
-              <img src="/src/assets/gear.svg" alt="gear" />
+              <img  onClick={() => navigate('/Decks')} src="/src/assets/gear.svg" alt="gear" />
               <h2>Java</h2>
               <p>20 cartões</p>
-              <button className='study-btn'>Estudar</button>
+              <button onClick={() => navigate('/flashcards')} className='study-btn'>Estudar</button>
             </div>
             <div className="card smaller-card02"></div>
           </div>
           <div className='slider'>
-            <p>Ver tudo <img src="/src/assets/arrow.svg" alt="arrow-see" /></p>
+            <p onClick={() => navigate('/Decks')} > Ver tudo <img src="/src/assets/arrow.svg" alt="arrow-see" /></p>
             <div className="flashcard-slider-container">
               <button className='arrow-left' onClick={scrollLeft}>
                 <img src="/src/assets/arrow.svg" alt="arrow-left" />
               </button>
               <div className="flashcard-slider" ref={scrollRef}>
-                <button>Javascript</button>
-                <button>Nodejs</button>
-                <button>Springboot</button>
-                <button>Flutter</button>
-                <button>React</button>
-                <button>Vue.js</button>
+                <button onClick={() => navigate('/Decks')}>Javascript</button>
+                <button onClick={() => navigate('/Decks')}>Nodejs</button>
+                <button onClick={() => navigate('/Decks')}>Springboot</button>
+                <button onClick={() => navigate('/Decks')}>Flutter</button>
+                <button onClick={() => navigate('/Decks')}>React</button>
+                <button onClick={() => navigate('/Decks')}>Vue.js</button>
               </div>
               <button className='arrow-right' onClick={scrollRight}>
                 <img src="/src/assets/arrow.svg" alt="arrow-right" />
               </button>
             </div>
           </div>
-          <button className="new-deck-button">Novo baralho</button>
+          <button onClick={() => navigate('/card')} className="new-deck-button">Novo baralho</button>
         </div>
 
         {/* Seção Ofensiva */}

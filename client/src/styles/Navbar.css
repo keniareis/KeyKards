@@ -1,0 +1,114 @@
+nav.navbar{
+    padding: 5px;
+}
+
+.navbar {
+    background-color: #270034;
+    position: relative;
+    top: 0;
+    width: 100%;
+    color: white;
+    padding: 1rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+  }
+  
+  .name-logo {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    height: 45px;
+    align-items: center;
+    background-image: linear-gradient(to right, rebeccapurple, #C900DB, #6D0075);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .name-logo img {
+    height: 40px;
+    width: 50px;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+  
+  .search-bar {
+    margin-top: 5px;
+    align-items: center;
+    align-self: center;
+    height: 35px;
+    width: 600px;
+    background-color: #14001E;
+  }
+  
+  .nav-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .nav-icons button {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    font-size: 16px;
+  }
+  
+  .nav-icons img {
+    margin-right: 5px;
+    height: 24px;
+    width: 25px;
+    align-self: center;
+  }
+  
+  .nav-icons img[alt="person"] {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Estilos para o dropdown */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: #340034;
+    border-radius: 5px;
+    padding: 5px ;
+    width: 180px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    
+    
+    .hr-dropdown{
+      align-items: center;
+      margin: 10px;
+    }
+  
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .dropdown-item span {
+    color: white;
+    font-size: 14px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(92, 0, 99, 0.956);
+    border-radius: 5px;
+  }
