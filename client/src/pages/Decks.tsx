@@ -1,8 +1,11 @@
 import React from 'react';
 import '/src/styles/Decks.css';
 import Navbar from '../components/Navbar';  
+import { useNavigate } from 'react-router-dom';
 
 const Decks: React.FC = () => {
+  const navigate = useNavigate();
+
   const decks = [
     { name: 'Java', cards: 20 },
     { name: 'Javascript', cards: 10 },
@@ -37,23 +40,21 @@ const Decks: React.FC = () => {
         </button>
 
         <div className="card-stack">
-            <button className="new-deck-button">Novo baralho</button>
+            <button onClick={() => navigate('/card')} className="new-deck-button">Novo baralho</button>
             <div className="card smaller-card01"></div>
             <div className="card main-card">
-              <img src="/src/assets/gear.svg" alt="gear" />
               <h2>{decks[0].name}</h2>
               <p>{decks[0].cards} cartões</p>
-              <button className='study-btn'>Estudar</button>
+              <button onClick={() => navigate('/Flashcards')} className='study-btn'>Estudar</button>
             </div>
             <div className="card smaller-card02"></div>
             <div className="right-buttons">
-              <button className="edit-deck-button">Editar baralho</button>
-              <button className="add-card-button">Adicionar carta</button>
+              <button onClick={() => navigate('/card')} className="edit-deck-button">Editar baralho</button>
+              <button onClick={() => navigate('/card')} className="add-card-button">Adicionar carta</button>
             </div>
           </div>
 
         <div className='slider'>
-            <p>Ver tudo <img src="/src/assets/arrow.svg" alt="arrow-see" /></p>
             <div className="flashcard-slider-container">
               <button className='arrow-left' onClick={scrollLeft}>
                 <img src="/src/assets/arrow.svg" alt="arrow-left" />

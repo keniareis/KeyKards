@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className="navbar">
-            <div className='name-logo'>
+            <div onClick={() => navigate('/home')} className='name-logo'>
                 <img src="/src/assets/logo.svg" alt="logo" />
                 <h1>KeyKards</h1>
             </div>

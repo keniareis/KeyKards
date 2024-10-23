@@ -127,8 +127,6 @@ const App: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Seção Hoje */}
           <div className='today-info'>
             <div className='today-name'>
               <img src="/src/assets/stats.svg" alt="" />
