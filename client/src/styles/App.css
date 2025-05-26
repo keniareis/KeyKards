@@ -1,0 +1,40 @@
+body {
+    background-color: #2e004f;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  button {
+    background-color: #8a00d4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6a00a9;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .flashcard {
+    background-color: #40007a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-container, .settings-container, .login-container, .register-container {
+    padding: 20px;
+  }
+  
+
+  
