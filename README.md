@@ -19,7 +19,7 @@ Esta é uma aplicação de flashcards. O objetivo é ajudar os usuários a estud
 
 ## Spoiler
 ### Login
-<img src="./imgs/Login.png" alt="Login" width="600px">
+<img src="front/imgs/Login.png" alt="Login" width="600px">
 
 ###  Home
-<img src="./imgs/home.png" alt="Home" width="600px">
+<img src="front/imgs/home.png" alt="Home" width="600px">
